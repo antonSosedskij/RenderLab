@@ -8,7 +8,7 @@
       <h1>{{ panels()[1] }}</h1>
     </div>
     <div class="canvas__stage">
-      <div class="frame">
+      <div class="frame" [style.display]="displayMode()">
         <div class="frame__card">1</div>
         <div class="frame__card">2</div>
         <div class="frame__card">3</div>
@@ -22,6 +22,11 @@
     <div class="inspektor">
       <h2>{{ panels()[2] }}</h2>
       <div class="inspektor__layout">
+        <h5>Display mode</h5>
+        <app-frame-display-select [(value)]="displayMode" />
+      </div>
+      <div class="inspektor__layout">
+        <h5>Gap</h5>
 
       </div>
     </div>

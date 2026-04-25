@@ -72,7 +72,6 @@
 }
 
 .frame {
-  display: grid;
   gap: var(--rl-space-4);
   width: min(100%, 38rem);
   min-height: 18rem;
@@ -88,4 +87,8 @@
   border: 1px solid var(--rl-color-line);
   border-radius: 0.5rem;
   background-color: var(--rl-color-surface);
+}
+
+.inspektor__layout {
+  padding: 10px 0;
 }
