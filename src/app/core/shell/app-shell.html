@@ -1,0 +1,26 @@
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" routerLink="/">
+      <span class="brand__mark" aria-hidden="true">R</span>
+      <span>{{ productName() }}</span>
+    </a>
+
+    <nav class="nav" aria-label="RenderLab sections">
+      @for (item of navItems(); track item.path) {
+        <a
+          class="nav__link"
+          [routerLink]="item.path"
+          routerLinkActive="nav__link--active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+        >
+          <span>{{ item.label }}</span>
+          <small>{{ item.area }}</small>
+        </a>
+      }
+    </nav>
+  </header>
+
+  <main class="viewport">
+    <router-outlet />
+  </main>
+</div>

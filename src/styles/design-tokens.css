@@ -1,0 +1,14 @@
+:root {
+  --rl-color-surface: #f7f7f4;
+  --rl-color-panel: #ffffff;
+  --rl-color-ink: #1c1f21;
+  --rl-color-muted: #667073;
+  --rl-color-line: #dfe4e1;
+  --rl-color-line-strong: #b9c4bf;
+  --rl-color-grid: #e5ebe7;
+  --rl-space-2: 0.5rem;
+  --rl-space-3: 0.75rem;
+  --rl-space-4: 1rem;
+  --rl-space-5: 1.5rem;
+  --rl-space-6: 2rem;
+}

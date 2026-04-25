@@ -1,0 +1,91 @@
+.workbench {
+  display: grid;
+  grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr) minmax(16rem, 22rem);
+  min-height: calc(100dvh - 4.5rem);
+}
+
+.rail,
+.canvas {
+  min-width: 0;
+  border-right: 1px solid var(--rl-color-line);
+}
+
+.rail {
+  display: grid;
+  align-content: start;
+  gap: var(--rl-space-4);
+  padding: var(--rl-space-4);
+  background: var(--rl-color-panel);
+}
+
+.rail--right {
+  border-right: 0;
+}
+
+.rail h2,
+.canvas h1 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 720;
+}
+
+.canvas {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--rl-color-surface);
+}
+
+.canvas__toolbar {
+  min-height: 3.5rem;
+  padding: var(--rl-space-4);
+  border-bottom: 1px solid var(--rl-color-line);
+}
+
+.canvas__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24rem;
+  padding: var(--rl-space-6);
+  background-image:
+    linear-gradient(var(--rl-color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rl-color-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.metrics {
+  min-height: 12rem;
+  padding-top: var(--rl-space-4);
+  border-top: 1px solid var(--rl-color-line);
+}
+
+@media (max-width: 980px) {
+  .workbench {
+    grid-template-columns: 1fr;
+  }
+
+  .rail,
+  .canvas {
+    border-right: 0;
+    border-bottom: 1px solid var(--rl-color-line);
+  }
+}
+
+.frame {
+  display: grid;
+  gap: var(--rl-space-4);
+  width: min(100%, 38rem);
+  min-height: 18rem;
+  padding: var(--rl-space-4);
+  border: 2px solid var(--rl-color-line);
+  border-radius: 0.625rem;
+  background-color: var(--rl-color-panel);
+}
+
+.frame__card {
+  min-height: 4rem;
+  padding: var(--rl-space-4);
+  border: 1px solid var(--rl-color-line);
+  border-radius: 0.5rem;
+  background-color: var(--rl-color-surface);
+}
