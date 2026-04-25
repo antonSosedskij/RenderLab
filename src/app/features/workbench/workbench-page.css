@@ -72,7 +72,6 @@
 }
 
 .frame {
-  gap: var(--rl-space-4);
   width: min(100%, 38rem);
   min-height: 18rem;
   padding: var(--rl-space-4);

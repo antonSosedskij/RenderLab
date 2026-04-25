@@ -1,0 +1,8 @@
+<span>{{ gap() }}px</span>
+<p-slider
+  class="slider"
+  [ngModel]="gap()"
+  (ngModelChange)="onChange($event)"
+  [min]="0"
+  [max]="48"
+></p-slider>
