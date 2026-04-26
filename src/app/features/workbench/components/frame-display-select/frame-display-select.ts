@@ -2,6 +2,7 @@ import { Component, model, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectButton } from 'primeng/selectbutton';
 
+import { FrameDisplayOptions } from '../../workbench.constants';
 import { DisplaySelectButtonOption, FrameDisplayMode } from '../../workbench.types';
 
 @Component({
@@ -14,13 +15,13 @@ export class FrameDisplaySelect {
 
   protected readonly options = signal<DisplaySelectButtonOption[]>([
     {
-      option: 'flex',
+      option: FrameDisplayOptions.Flex,
     },
     {
-      option: 'block',
+      option: FrameDisplayOptions.Block,
     },
     {
-      option: 'grid',
+      option: FrameDisplayOptions.Grid,
     },
   ]);
 
