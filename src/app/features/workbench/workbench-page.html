@@ -1,0 +1,56 @@
+<section class="workbench" aria-label="RenderLab workbench">
+  <aside class="rail rail--left">
+    <h2>{{ panels()[0] }}</h2>
+  </aside>
+
+  <section class="canvas">
+    <div class="canvas__toolbar">
+      <h1>{{ panels()[1] }}</h1>
+    </div>
+    <div class="canvas__stage">
+      <div class="frame" [style]="frameStyles()">
+        <div class="frame__card">Card 01</div>
+        <div class="frame__card">Card 02</div>
+        <div class="frame__card">Card 03</div>
+        <div class="frame__card">Card 04</div>
+        <div class="frame__card">Card 05</div>
+        <div class="frame__card">Card 06</div>
+        <div class="frame__card">Card 07</div>
+        <div class="frame__card">Card 08</div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="rail rail--right">
+    <div class="inspektor">
+      <h2>{{ panels()[2] }}</h2>
+      <div class="inspektor__layout">
+        <h5>Display mode</h5>
+        <app-frame-display-select
+          [value]="frameLayout().display"
+          (valueChange)="setDisplayMode($event)"
+        />
+      </div>
+      <div class="inspektor__layout">
+        <h5>Gap</h5>
+        <app-gap-slider [gap]="frameLayout().gap" (gapChange)="setFrameGap($event)" />
+      </div>
+      <div class="inspektor__layout display-controls">
+        @switch (frameLayout().display) {
+          @case (FrameDisplayOptions.Flex) {
+            <app-flex-controls [options]="flexOptions()" (optionsChange)="setFlexOptions($event)" />
+          }
+          @case (FrameDisplayOptions.Grid) {
+            Grid here buddy!
+          }
+          @case (FrameDisplayOptions.Block) {
+            Block here buddy!
+          }
+        }
+      </div>
+    </div>
+    <div class="metrics">
+      <h2>{{ panels()[3] }}</h2>
+    </div>
+  </aside>
+</section>

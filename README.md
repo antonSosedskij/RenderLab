@@ -1,59 +1,102 @@
 # RenderLab
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+RenderLab is an Angular 21 pet project for studying frontend platform internals through a real interface.
 
-## Development server
+The app is built as an interactive workbench: a canvas in the center, controls in the inspector, and focused lab sections for CSS layout, browser rendering, loading strategy, and JavaScript runtime behavior.
 
-To start a local development server, run:
+## Goals
+
+- Study CSS layout with practical `block`, `flex`, and `grid` experiments.
+- Connect inspector controls to real browser layout behavior.
+- Explore rendering topics such as CRP, paint, compositing, GPU-friendly CSS, FOIT/FOUT, and CSS Houdini.
+- Practice Angular 21 primitives: standalone components, signals, model inputs, computed state, lazy routes, resources, forms, and deferrable views.
+- Keep browser-platform experiments close to native HTML/CSS/DOM instead of hiding them inside UI libraries.
+
+## Current Focus
+
+The project is currently in the Workbench layout phase.
+
+Implemented:
+
+- App shell with lazy-routed sections.
+- Workbench page with component rail, canvas, inspector, and metrics area.
+- Demo frame with layout cards.
+- Display mode control: `block`, `flex`, `grid`.
+- Gap control.
+- Flex controls for:
+  - `flex-direction`
+  - `flex-wrap`
+  - `justify-content`
+  - `align-items`
+
+Next:
+
+- Grid controls.
+- More explicit layout learning checkpoints.
+- Rendering and loading labs.
+
+## Architecture Notes
+
+- Angular standalone components are used across the app.
+- Workbench frame layout is modeled as a discriminated union state.
+- Inspector controls are wrapped around PrimeNG components so PrimeNG-specific binding logic does not leak into page components.
+- The canvas/frame experiments remain plain HTML/CSS/Angular bindings.
+- Runtime design tokens live in CSS custom properties.
+
+## Development
+
+Install dependencies:
 
 ```bash
-ng serve
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Start the dev server:
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Open:
+
+```text
+http://localhost:4200/
+```
+
+Format the project:
 
 ```bash
-ng generate --help
+npm run format
 ```
 
-## Building
-
-To build the project run:
+Check formatting:
 
 ```bash
-ng build
+npm run format:check
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Build:
 
 ```bash
-ng test
+npm run build
 ```
 
-## Running end-to-end tests
+## Learning Workflow
 
-For end-to-end (e2e) testing, run:
+RenderLab is developed as a learning project, not just a feature checklist.
 
-```bash
-ng e2e
-```
+After every completed study step, the implementation is reviewed and the developer must explain the concepts before moving forward. This keeps the project connected to the underlying browser and Angular mental models.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## AI-Assisted Development
 
-## Additional Resources
+This project is developed with AI assistance, but not as a prompt-only generated app.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The developer owns the implementation, decisions, and learning process. AI is used as:
+
+- a reviewer for code, architecture, and UI decisions;
+- a mentor for frontend platform concepts;
+- a planning partner for breaking the project into study stages;
+- a source of feedback on trade-offs and missing understanding;
+- a helper for small infrastructure or refactoring tasks when explicitly requested.
+
+The working rule is intentional: after each feature stage, the implementation is reviewed and the developer must explain the underlying concepts before moving on. The goal is to build both the project and the engineering understanding behind it.

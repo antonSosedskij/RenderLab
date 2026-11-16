@@ -1,0 +1,44 @@
+.lab-page {
+  display: grid;
+  gap: var(--rl-space-5);
+  padding: var(--rl-space-6);
+}
+
+.lab-page header {
+  display: grid;
+  gap: var(--rl-space-2);
+}
+
+.lab-page p,
+.lab-page h1,
+.lab-page h2 {
+  margin: 0;
+}
+
+.lab-page p {
+  color: var(--rl-color-muted);
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.lab-page h1 {
+  font-size: 2rem;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--rl-space-4);
+}
+
+.lab-grid article {
+  min-height: 12rem;
+  padding: var(--rl-space-4);
+  border: 1px solid var(--rl-color-line);
+  border-radius: 0.5rem;
+  background: var(--rl-color-panel);
+}
+
+.lab-grid h2 {
+  font-size: 1rem;
+}

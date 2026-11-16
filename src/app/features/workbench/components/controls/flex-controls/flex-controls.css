@@ -1,0 +1,37 @@
+.controls {
+  display: grid;
+  gap: var(--rl-space-4);
+  min-width: 0;
+}
+
+.controls__item {
+  display: grid;
+  gap: var(--rl-space-2);
+  min-width: 0;
+}
+
+.controls__item span {
+  color: var(--rl-color-muted);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+:host ::ng-deep .p-selectbutton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rl-space-2);
+  max-width: 100%;
+}
+
+:host ::ng-deep .p-selectbutton .p-togglebutton {
+  flex: 1 1 min(8.5rem, 100%);
+  min-width: 0;
+}
+
+:host ::ng-deep .p-selectbutton .p-togglebutton-content {
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

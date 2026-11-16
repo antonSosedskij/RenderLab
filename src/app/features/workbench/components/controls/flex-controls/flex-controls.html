@@ -1,0 +1,42 @@
+<div class="controls">
+  <div class="controls__item">
+    <span>flex-direction</span>
+    <p-selectButton
+      [options]="directionOptions()"
+      [ngModel]="options().direction"
+      (ngModelChange)="setDirection($event)"
+      optionLabel="option"
+      optionValue="option"
+    ></p-selectButton>
+  </div>
+  <div class="controls__item">
+    <span>flex-wrap</span>
+    <p-selectButton
+      [options]="wrapOptions()"
+      [ngModel]="options().wrap"
+      (ngModelChange)="setWrap($event)"
+      optionLabel="option"
+      optionValue="option"
+    ></p-selectButton>
+  </div>
+  <div class="controls__item">
+    <span>justify-content</span>
+    <p-selectButton
+      [options]="justifyOptions()"
+      [ngModel]="options().justifyContent"
+      (ngModelChange)="setJustifyContent($event)"
+      optionLabel="option"
+      optionValue="option"
+    ></p-selectButton>
+  </div>
+  <div class="controls__item">
+    <span>align-items</span>
+    <p-selectButton
+      [options]="alignOptions()"
+      [ngModel]="options().alignItems"
+      (ngModelChange)="setAlignItems($event)"
+      optionLabel="option"
+      optionValue="option"
+    ></p-selectButton>
+  </div>
+</div>
